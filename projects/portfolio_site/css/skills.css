@@ -66,4 +66,8 @@
     .skills-grid {
         grid-template-columns: 1fr;
     }
+    
+    .skill-card {
+        padding: 1.5rem;
+    }
 }
