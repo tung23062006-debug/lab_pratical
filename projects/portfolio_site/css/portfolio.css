@@ -57,7 +57,7 @@
     border-radius: 12px;
 }
 
-/* --- HIỆU ỨNG HOVER (Image Zoom) --- */
+/* --- HIỆU ỨNG HOVER (Image Zoom) đã làm những quên commit nên commit lại --- */
 .portfolio-item img {
     width: 100%;
     aspect-ratio: 4/3;
