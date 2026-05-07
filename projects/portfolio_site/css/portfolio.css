@@ -1,0 +1,113 @@
+.portfolio-section .container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.portfolio-section h2 {
+    text-align: center;      
+    margin-bottom: 50px;     
+    font-size: 2.5rem;       
+    font-weight: 700;        
+    position: relative;
+    color: #1e293b;          
+}
+
+.portfolio-filters {
+    display: flex;
+    justify-content: center; 
+    gap: 15px;               
+    margin-bottom: 50px;    
+    flex-wrap: wrap;         
+}
+
+.filter-btn {
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    padding: 8px 25px;
+    border-radius: 30px;    
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-main);
+}
+
+.filter-btn:hover, 
+.filter-btn.active {
+    background-color: var(--color-primary);
+    color: white;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    transform: translateY(-2px);
+}
+
+/* --- PHẦN GRID (3/2/1 columns) --- */
+.portfolio-grid {
+    display: grid;
+    /* Desktop: 3 cột đều nhau */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 20px 0;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+/* --- HIỆU ỨNG HOVER (Image Zoom) --- */
+.portfolio-item img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1); /* Zoom ảnh lên 10% */
+}
+
+/* --- HIỆU ỨNG OVERLAY (Text hiện lên) --- */
+.portfolio-overlay {
+    position: absolute;
+    inset: 0;
+    /* Gradient tạo độ tương phản để đọc chữ dễ hơn */
+    background: linear-gradient(to top, rgba(30, 41, 59, 0.9) 0%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    opacity: 0; /* Mặc định ẩn */
+    transition: opacity 0.3s ease;
+    color: white;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1; /* Hiện overlay khi hover vào item */
+}
+
+.portfolio-overlay h3 {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.portfolio-overlay p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* --- RESPONSIVE (Tablet & Mobile) --- */
+@media (max-width: 1024px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cột trên Tablet */
+    }
+}
+
+@media (max-width: 640px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* 1 cột trên Mobile */
+    }
+}
