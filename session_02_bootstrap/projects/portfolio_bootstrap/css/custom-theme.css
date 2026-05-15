@@ -1,10 +1,8 @@
 :root {
-    /* Thay đổi màu xanh dương mặc định của Bootstrap thành màu Teal */
     --bs-primary: #14b8a6;
     --bs-primary-hover: #0d9488;
     --bs-primary-rgb: 20, 184, 166;
     
-    /* Cập nhật màu nút bấm */
     --bs-link-color: #14b8a6;
     --bs-link-hover-color: #0d9488;
 }
@@ -12,4 +10,16 @@
 .btn-primary {
     background-color: var(--bs-primary);
     border-color: var(--bs-primary);
+}
+
+:root {
+    --bs-border-radius: 0.5rem;
+    --bs-border-radius-lg: 1rem;
+    --bs-border-radius-xl: 1.5rem;
+}
+
+.card {
+    border: none;
+    border-radius: 16px; 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
 }
